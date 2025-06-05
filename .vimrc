@@ -1,12 +1,14 @@
-execute pathogen#infect()
+set termguicolors
+colorscheme onedark " install from joshdick/onedark.vim
+let g:onedark_termcolors=256
 
-syntax on
+set nocompatible
 filetype plugin indent on
+syntax on
 
 set relativenumber
 set mouse=n
 set number
-set background=dark
 set nohlsearch
 
 " tabs
@@ -19,12 +21,7 @@ set expandtab
 
 highlight LineNr ctermfg=darkgrey
 highlight Comment ctermfg=darkgrey
-
-" cursor
-let &t_ti.="\e[1 q"
-let &t_SI.="\e[5 q"
-let &t_EI.="\e[1 q"
-let &t_te.="\e[0 q"
+highlight Normal ctermbg=none guibg=NONE
 
 " scrolling
 nnoremap <silent> <C-f> <C-e>
@@ -39,3 +36,11 @@ nnoremap <C-n> :e .<CR>
 " tab shifting
 nnoremap <Tab> gt
 nnoremap <S-Tab> gT
+
+" open and close tab
+nnoremap <C-c> :tabclose<CR>
+nnoremap <C-o> :tabe .<CR>
+
+" start and end of file
+nnoremap <S-h> ^
+nnoremap <S-l> $
